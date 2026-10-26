@@ -1,0 +1,11 @@
+# systemd user unit: copy to ~/.config/systemd/user/ then
+#   systemctl --user enable --now glpi-label
+[Unit]
+Description=glpi-label agent for the GLPI "Print label" button
+
+[Service]
+ExecStart=%h/.local/bin/glpi-label serve
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

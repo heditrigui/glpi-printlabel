@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glpi-label"
+version = "2.0.0"
+description = "Print GLPI asset labels (name + QR code) on Zebra label printers"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.9"
+dependencies = ["qrcode>=7", "pillow>=10.1"]
+
+[project.optional-dependencies]
+windows = ["pywin32"]
+
+[project.scripts]
+glpi-label = "glpi_label:main"
+
+[tool.setuptools]
+py-modules = ["glpi_label"]
